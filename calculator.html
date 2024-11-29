@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .background {
+            background: linear-gradient(60deg, rgba(71, 119, 207, 0.6), rgba(229, 223, 105, 0.6));
+            background-size: cover;
+            background-repeat: repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .cal-button {
+            height: 60px;
+            font-size: 24px;
+            border: none;
+            border-radius: 5px;
+            background-color: #c4c0c0;
+            cursor: pointer;
+        }
+
+        .cal-button:active {
+            background-color: #ccc;
+        }
+
+        .cal-button:hover {
+            background-color: #ddd;
+        }
+
+        .screen {
+            grid-column: span 4;
+            height: 60px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body class="background">
+    <div class="calculator">
+        <input type="text" id="screen" class="screen" disabled>
+        <button class="cal-button" onclick="clearScreen()">C</button>
+        <button class="cal-button" onclick="deleteChar()">←</button>
+        <button class="cal-button" onclick="appendValue('/')">/</button>
+        <button class="cal-button" onclick="appendValue('*')">*</button>
+        <button class="cal-button" onclick="appendValue('7')">7</button>
+        <button class="cal-button" onclick="appendValue('8')">8</button>
+        <button class="cal-button" onclick="appendValue('9')">9</button>
+        <button class="cal-button" onclick="appendValue('-')">-</button>
+        <button class="cal-button" onclick="appendValue('4')">4</button>
+        <button class="cal-button" onclick="appendValue('5')">5</button>
+        <button class="cal-button" onclick="appendValue('6')">6</button>
+        <button class="cal-button" onclick="appendValue('+')">+</button>
+        <button class="cal-button" onclick="appendValue('1')">1</button>
+        <button class="cal-button" onclick="appendValue('2')">2</button>
+        <button class="cal-button" onclick="appendValue('3')">3</button>
+        <button class="cal-button" onclick="calculate()" style="background-color:rgb(158, 139, 47)">=</button>
+        <button class="cal-button" onclick="appendValue('0')">0</button>
+        <button class="cal-button" onclick="appendValue('.')">.</button>
+    </div>
+    
+    <script src="calculator.js"></script>
+    
+</body>
+</html>
